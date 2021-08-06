@@ -1,5 +1,5 @@
 {
-	"name": "amitrajput1992/react-insta-stories",
+	"name": "@amit.rajput/react-insta-stories",
 	"version": "1.0.0",
 	"description": "A React component for Instagram like stories",
 	"main": "dist/index.js",
