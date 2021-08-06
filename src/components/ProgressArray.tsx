@@ -10,7 +10,6 @@ export default () => {
     const { currentId, next, videoDuration, pause } = useContext<ProgressContext>(ProgressCtx)
     const { defaultInterval, onStoryEnd, onStoryStart, onAllStoriesEnd } = useContext<GlobalCtx>(GlobalContext);
     const { stories } = useContext<StoriesContextInterface>(StoriesContext);
-
     useEffect(() => {
         setCount(0)
     }, [currentId, stories])
@@ -25,18 +24,30 @@ export default () => {
     }, [currentId, pause])
 
     let animationFrameId = useRef<number>()
+    let startTimestamp: undefined | number = undefined;
+    let previousTimestamp = 0;
+    const incrementCount = (ms: number) => {
+        if(startTimestamp === undefined) {
+            startTimestamp = ms;
+        }
+        const elapsed = ms - startTimestamp;
+        const interval = getCurrentInterval()
 
-    let countCopy = count;
-    const incrementCount = () => {
-        if (countCopy === 0) storyStartCallback()
-        setCount((count: number) => {
-            const interval = getCurrentInterval()
-            countCopy = count + (100 / ((interval / 1000) * 60))
-            return count + (100 / ((interval / 1000) * 60))
-        })
-        if (countCopy < 100) {
+        if (elapsed === 0) {
+            storyStartCallback();
+        }
+        setCount(() => {
+            if(previousTimestamp !== ms) {
+                // spread elapsed time since start over the current interval, multiply by 100 to get in % of completion
+                return elapsed / interval * 100;
+            }
+        });
+        if(elapsed < interval) {
+            previousTimestamp = ms;
             animationFrameId.current = requestAnimationFrame(incrementCount)
         } else {
+            startTimestamp = undefined;
+            previousTimestamp = 0;
             storyEndCallback();
             if (currentId === stories.length - 1) {
                 allStoriesEndCallback();
