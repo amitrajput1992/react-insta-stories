@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Stories, { WithSeeMore } from 'react-insta-stories'
+import Stories, { WithSeeMore } from '@amit.rajput/react-insta-stories'
 
 function App() {
 	return (
