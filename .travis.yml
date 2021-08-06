@@ -13,9 +13,8 @@ script:
   - yarn build
 deploy:
   provider: npm
-  email: "amitrajput123.ar@gmail.com"
+  email: $email
   api_key: $npm_token
   local_dir: dist
-  tag: next
   on:
-    tags: true
+    branch: master
