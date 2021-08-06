@@ -23,4 +23,4 @@ deploy:
     github_token: $github_token
     local_dir: example/dist
     on:
-      branch: main
+      branch: master
