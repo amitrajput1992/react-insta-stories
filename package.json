@@ -1,10 +1,12 @@
 {
   "name": "@amit.rajput/react-insta-stories",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A React component for Instagram like stories",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist/*"],
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
