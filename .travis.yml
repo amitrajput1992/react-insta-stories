@@ -8,9 +8,9 @@ node_js:
 #  directories:
 #   - node_modules
 install:
-  - pnpm install
+  - yarn install
 script:
-  - pnpm buildall
+  - yarn buildall
 deploy:
   - provider: npm
     email: $email
