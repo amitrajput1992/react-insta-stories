@@ -15,6 +15,7 @@ deploy:
   - provider: npm
     email: $email
     api_key: $npm_token
+    skip_cleanup: true
     on:
       branch: master
   - provider: pages
