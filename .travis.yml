@@ -16,5 +16,6 @@ deploy:
   email: "amitrajput123.ar@gmail.com"
   api_key: $npm_token
   local_dir: dist
+
   on:
     branch: master

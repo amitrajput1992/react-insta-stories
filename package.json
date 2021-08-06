@@ -29,6 +29,9 @@
 	"bugs": {
 		"url": "https://github.com/amitrajput1992/react-insta-stories/issues"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"homepage": "https://github.com/amitrajput1992/react-insta-stories#readme",
 	"devDependencies": {
 		"@babel/core": "^7.5.5",
