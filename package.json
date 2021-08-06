@@ -17,8 +17,8 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/dist",
     "buildall": "npm install && webpack --mode production && cd example && npm install && npm run build",
-    "publish:version": "N=$(node -p \"require('./package.json').name\") && pnpm version patch --message \"v%s: $N Prep for publish\"",
-    "publish:version-no-tag": "N=$(node -p \"require('./package.json').name\") && pnpm version patch --message \"v%s: $N [ci skip]\""
+    "basetag": "rm -rf dist && npm run publish:version && git push --tags",
+    "publish:version": "N=$(node -p \"require('./package.json').name\") && pnpm version patch --message \"v%s: $N [ci skip]\""
   },
   "repository": {
     "type": "git",

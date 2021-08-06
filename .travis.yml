@@ -16,6 +16,7 @@ deploy:
     email: $email
     api_key: $npm_token
     local_dir: dist
+    tag: next
     on:
       branch: master
   - provider: pages
