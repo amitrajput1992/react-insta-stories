@@ -117,7 +117,8 @@ export default function () {
     }
 
     return (
-        <div style={{ ...storyContainerStyles, ...styles.container, ...{ width, height } }}>
+        // allow external styles to override everything
+        <div style={{ ...styles.container, ...{ width, height }, ...storyContainerStyles }}>
             <ProgressContext.Provider value={{
                 bufferAction: bufferAction,
                 videoDuration: videoDuration,

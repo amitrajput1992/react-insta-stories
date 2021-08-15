@@ -91,7 +91,7 @@ const styles = {
     storyContent: {
         width: "auto",
         maxWidth: "100%",
-        maxHeight: "100%",
+        maxHeight: "100vh",
         margin: "auto"
     },
     videoContainer: {
