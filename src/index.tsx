@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ReactInstaStoriesProps, GlobalCtx, Story, Tester, Renderer } from './interfaces'
+import { ReactInstaStoriesProps, GlobalCtx, Story, Tester, Renderer, Header } from './interfaces'
 import Container from './components/Container'
 import GlobalContext from './context/Global'
 import StoriesContext from './context/Stories';
@@ -64,5 +64,5 @@ ReactInstaStories.defaultProps = {
 
 export const WithHeader = withHeader;
 export const WithSeeMore = withSeeMore;
-
+export {Story, Header};
 export default ReactInstaStories
